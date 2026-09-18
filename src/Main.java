@@ -1,25 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car();
+        Account bobsAccount = new Account();
 
-        car.setMake("Porsche");
-        car.setModel("Carrera");
-        car.setDoors(2);
-        car.setConvertible(true);
-        car.setColor("black");
+        bobsAccount.setNumber("12345");
+        bobsAccount.setBalance(1000.00);
+        bobsAccount.setCustomerName("Bob Brown");
 
-        System.out.println("make = " + car.getMake());
-        System.out.println("model = " + car.getModel());
+        bobsAccount.withdrawFunds(100.0);
+        bobsAccount.depositFunds(250);
+        bobsAccount.withdrawFunds(50);
 
-        car.describeCar();
-
-        Car targa = new Car();
-        targa.setMake("Porsche");
-        targa.setModel("Targa");
-        targa.setDoors(2);
-        targa.setConvertible(true);
-        targa.setColor("red");
-
-        targa.describeCar();
+        bobsAccount.withdrawFunds(200);
     }
 }
