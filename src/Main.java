@@ -1,18 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-        Customer customer = new Customer("Tim", 1000, "tim@email.com");
-        System.out.println(customer.getName());
-        System.out.println(customer.getCreditLimit());
-        System.out.println(customer.getEmail());
-
-        Customer secondCustomer = new Customer();
-        System.out.println(secondCustomer.getName());
-        System.out.println(secondCustomer.getCreditLimit());
-        System.out.println(secondCustomer.getEmail());
-
-        Customer thirdCustomer = new Customer("Joe", "joe@email.com");
-        System.out.println(thirdCustomer.getName());
-        System.out.println(thirdCustomer.getCreditLimit());
-        System.out.println(thirdCustomer.getEmail());
+        for (int i = 1; i <= 5; i++) {
+            Student s = new Student("S92300" + i,
+                    switch (i) {
+                        case 1 -> "Mary";
+                        case 2 -> "Carol";
+                        case 3 -> "Tim";
+                        case 4 -> "Harry";
+                        case 5 -> "Lisa";
+                        default -> "Anonymous";
+                    },
+                    "05/11/1985",
+                    "Java Masterclass");
+            
+            System.out.println(s);
+        }
     }
 }
