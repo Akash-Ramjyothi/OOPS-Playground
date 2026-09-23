@@ -1,28 +1,47 @@
-public class Main {
+public class Main extends Object {
     public static void main(String[] args) {
-        Animal animal = new Animal("Generic Animal", "Huge", 400);
-        doAnimalStuff(animal, "slow");
+        Student max = new Student("Max", 21);
+        System.out.println(max);
 
-        Dog dog = new Dog();
-        doAnimalStuff(dog, "fast");
+        PrimarySchoolStudent jimmy = new PrimarySchoolStudent("Jimmy", 8, "Carole");
+        System.out.println(jimmy);
+    }
+}
 
-        Dog yorkie = new Dog("Yorkie", 15);
-        doAnimalStuff(yorkie, "fast");
+class Student {
+    private String name;
+    private int age;
 
-        Dog retriever = new Dog("Labrador Retriever", 65, "Floppy", "Swimmer");
-        doAnimalStuff(retriever, "slow");
-
-        Dog wolf = new Dog("Wolf", 40);
-        doAnimalStuff(wolf, "slow");
-
-        Fish goldie = new Fish("Goldfish", 0.25, 2, 3);
-        doAnimalStuff(goldie, "fast");
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
-    public static void doAnimalStuff(Animal animal, String speed) {
-        animal.makeNoise();
-        animal.move(speed);
-        System.out.println(animal);
-        System.out.println("_ _ _ _");
+//    @Override
+//    public String toString() {
+//        return super.toString();
+//    }
+
+    @Override
+    public String toString() {
+        return name + " is " + age;
+//        return "Student{" +
+//                "name='" + name + '\'' +
+//                ", age=" + age +
+//                '}';
+    }
+}
+
+class PrimarySchoolStudent extends Student {
+    private String parentName;
+
+    PrimarySchoolStudent(String name, int age, String parentName) {
+        super(name, age);
+        this.parentName = parentName;
+    }
+
+    @Override
+    public String toString() {
+        return parentName + "'s kid, " + super.toString();
     }
 }
