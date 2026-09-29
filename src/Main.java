@@ -1,18 +1,28 @@
 public class Main {
     public static void main(String[] args) {
-        printInformation("Hello World");
+        String helloWorld = "Hello" + " World";
+        helloWorld.concat(" and Goodbye");
+
+        StringBuilder helloWorldBuilder = new StringBuilder("Hello" + " World");
+        helloWorldBuilder.append(" and Goodbye");
+
+        printInformation(helloWorld);
+        printInformation(helloWorldBuilder);
+
+        StringBuilder emptyStart = new StringBuilder();
+        StringBuilder emptyStart32 = new StringBuilder(32);
+
+        printInformation(emptyStart);
+        printInformation(emptyStart32);
     }
 
     public static void printInformation(String string) {
-        int length = string.length();
-        System.out.printf("Length = %d %n", length);
+        System.out.println("String = " + string);
+        System.out.println("length = " + string.length());
+    }
 
-        if (string.isEmpty()) {
-            System.out.println("String is Empty");
-            return;
-        }
-
-        System.out.printf("First char = %c %n", string.charAt(0));
-        System.out.printf("Last char = %c %n", string.charAt(length - 1));
+    public static void printInformation(StringBuilder builder) {
+        System.out.println("StringBuilder = " + builder);
+        System.out.println("length = " + builder.length());
     }
 }
