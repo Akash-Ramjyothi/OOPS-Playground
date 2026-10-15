@@ -1,25 +1,14 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-//        Movie theMovie = Movie.getMovie("Science", "Star Wars");
-//        theMovie.watchMovie();
+        Car car = new Car("2022 Blue Ferrari 296 GTS");
+        runRace(car);
 
-        Scanner s = new Scanner(System.in);
-        while (true) {
-            System.out.println("Enter Type = (A for adventure, C for Comedy, S for Science Fiction, or Q to quit): ");
-            String type = s.nextLine();
+        Car ferrari = new GasPoweredCar("2022 Blue Ferrari 296 GTS", 15.4, 6);
+        runRace(ferrari);
+    }
 
-            if ("Qq".contains(type)) {
-                break;
-            }
-            System.out.print("Enter Movie Title: ");
-            String title = s.nextLine();
-
-            Movie movie = Movie.getMovie(type, title);
-            movie.watchMovie();
-        }
+    public static void runRace(Car car) {
+        car.startEngine();
+        car.drive();
     }
 }
